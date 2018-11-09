@@ -12,7 +12,7 @@ class AddScheduleViewController: UITableViewController {
 
     var schedTypes = ["Netflix", "Hulu", "Amazon", "Spotify"]
     var myIndex = 0
-    
+    var maxHoursReservable =  0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class AddScheduleViewController: UITableViewController {
     }
     
     @objc func save(_ sender: Any) {
-        APIManager.makeNewSchedule(type: schedTypes[myIndex])
+        APIManager.makeNewSchedule(type: schedTypes[myIndex], maxReservableHours: maxHoursReservable)
         self.navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var timeLimit: UILabel!
@@ -74,8 +74,6 @@ class AddScheduleViewController: UITableViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
-      
-        
     }
     
     @IBAction func offLimitHours(_ sender: Any) {
