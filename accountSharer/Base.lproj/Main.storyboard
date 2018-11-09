@@ -555,6 +555,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="timeLimit" destination="UQS-KC-0B6" id="oh8-Sc-aiS"/>
                         <segue destination="b1A-uC-mkf" kind="show" identifier="toSchedules" id="FEY-45-yCJ"/>
                     </connections>
                 </tableViewController>

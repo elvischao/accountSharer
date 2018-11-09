@@ -51,12 +51,14 @@ class AddScheduleViewController: UITableViewController {
         APIManager.makeNewSchedule(type: schedTypes[myIndex])
         self.navigationController?.popViewController(animated: true)
     }
-
+    @IBOutlet weak var timeLimit: UILabel!
+    
     @IBAction func timeLimit(_ sender: Any) {
         let alert = UIAlertController(title: "time limit alert", message: "Set a time limit for your users", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
             let textField = alert.textFields![0]
-            print (textField.text)
+            self.timeLimit.text = textField.text! + " hours"
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         
