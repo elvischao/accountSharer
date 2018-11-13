@@ -10,11 +10,16 @@ Time spent: **X** hours spent in total
 - [x] log in/log out/persisted user
 - [x] submit a time-slot request
 - [x] show schedule for an account
+- [x] user can search for others accounts
+- [x] user can add a schedule
+- [x] user can delete their own schedules
+- [x] user can delete their own TimeSlots
 
 The following **stretch** features are implemented:
 
 - [ ] make it look nice with animations and transitions and themes
 - [x] prevent users from overlapping their own times/other times
+- [x] delete "expired" timeslots
 
 The following **additional** features are implemented:
 
