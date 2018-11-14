@@ -12,13 +12,15 @@ class AddScheduleViewController: UITableViewController {
 
     var schedTypes = ["Netflix", "Hulu", "Amazon", "Spotify"]
     var myIndex = 0
-    var maxHoursReservable =  0
+    var maxHoursReservable =  -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(save))
         tableView.cellForRow(at: IndexPath(row: 0, section: 0))?.accessoryType = .checkmark
+        
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,10 +56,15 @@ class AddScheduleViewController: UITableViewController {
     @IBOutlet weak var timeLimit: UILabel!
     
     @IBAction func timeLimit(_ sender: Any) {
-        let alert = UIAlertController(title: "time limit alert", message: "Set a time limit for your users", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Time Limit", message: "Set a time limit for your users", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
             let textField = alert.textFields![0]
-            self.timeLimit.text = textField.text! + " hours"
+            self.maxHoursReservable = Int(textField.text!)!
+            if self.maxHoursReservable > -1 {
+                self.timeLimit.text = textField.text! + " hours"
+            } else {
+                self.timeLimit.text = "Unlimited"
+            }
             
         })
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })

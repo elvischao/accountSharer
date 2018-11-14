@@ -35,6 +35,14 @@ class MakeTimeSlotViewController: UIViewController {
     func addTimeSlot() {
         print(timeSlots)
         
+        let future = (timeSlot.timeStart).addingTimeInterval(TimeInterval(3600*self.schedule.maxReserveHours))
+        if timeSlot.timeEnd > future {
+            APIManager.showAlert(title: "Error", message: "Time slot is too large", controller: self)
+            return
+        }
+        
+        
+        
         if (timeSlot.timeStart >= timeSlot.timeEnd) {
             APIManager.showAlert(title: "Error", message: "Time start must be before time end", controller: self)
             return
