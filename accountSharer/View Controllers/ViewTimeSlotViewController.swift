@@ -57,6 +57,11 @@ class ViewTimeSlotViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let selected = self.timeSlots[indexPath.row]
+        return selected.owner.username == PFUser.current()!.username
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         APIManager.delTimeSlot(timeSlot: timeSlots[indexPath.row])  { (success: Bool?, error: Error?) in
             if (success!) {
