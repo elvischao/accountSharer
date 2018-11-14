@@ -20,6 +20,8 @@ class MakeTimeSlotViewController: UIViewController {
     var timeSlot: TimeSlot!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dateStartPicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+        self.dateEndPicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
     }
     
     @IBAction func reservePressed(_ sender: Any) {
@@ -33,7 +35,7 @@ class MakeTimeSlotViewController: UIViewController {
     }
     
     func addTimeSlot() {
-        print(timeSlots)
+
         
         let future = (timeSlot.timeStart).addingTimeInterval(TimeInterval(3600*self.schedule.maxReserveHours))
         if timeSlot.timeEnd > future {
