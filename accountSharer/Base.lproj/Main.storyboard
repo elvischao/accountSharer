@@ -486,22 +486,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-6A-ZIk">
-                                                    <rect key="frame" x="16" y="11" width="80" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-6A-ZIk">
+                                                    <rect key="frame" x="16" y="8" width="80" height="27.5"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQS-KC-0B6">
-                                                    <rect key="frame" x="293" y="11" width="59" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlimited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQS-KC-0B6">
+                                                    <rect key="frame" x="286" y="11.5" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="iXz-6A-ZIk" secondAttribute="bottom" constant="8" id="E9L-P8-LWO"/>
+                                                <constraint firstItem="UQS-KC-0B6" firstAttribute="centerY" secondItem="iXz-6A-ZIk" secondAttribute="centerY" id="J6O-z9-ea1"/>
+                                                <constraint firstItem="iXz-6A-ZIk" firstAttribute="top" secondItem="9Sd-fU-owN" secondAttribute="top" constant="8" id="QDw-vO-k43"/>
+                                                <constraint firstAttribute="trailing" secondItem="UQS-KC-0B6" secondAttribute="trailing" constant="16" id="YOQ-xt-ZQg"/>
+                                                <constraint firstItem="iXz-6A-ZIk" firstAttribute="leading" secondItem="9Sd-fU-owN" secondAttribute="leading" constant="16" id="qTk-Po-dUT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
@@ -555,6 +560,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="hoursField" destination="UQS-KC-0B6" id="Nbd-7s-PBX"/>
                         <segue destination="b1A-uC-mkf" kind="show" identifier="toSchedules" id="FEY-45-yCJ"/>
                     </connections>
                 </tableViewController>
@@ -809,7 +815,7 @@
         <image name="time_slot__1072043" width="87" height="88"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mbQ-sP-uvU"/>
+        <segue reference="L68-rE-6xY"/>
         <segue reference="FEY-45-yCJ"/>
     </inferredMetricsTieBreakers>
 </document>

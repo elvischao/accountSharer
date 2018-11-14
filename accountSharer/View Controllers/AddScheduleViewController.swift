@@ -53,7 +53,7 @@ class AddScheduleViewController: UITableViewController {
     }
 
     @IBAction func timeLimit(_ sender: Any) {
-        let alert = UIAlertController(title: "time limit alert", message: "Set a time limit for your users", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Set Maximum Reservable Time", message: "Set a time limit for your users", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
             let textField = alert.textFields![0]
             print (textField.text)

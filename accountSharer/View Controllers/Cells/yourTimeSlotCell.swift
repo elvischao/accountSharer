@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class yourTimeSlotCell: UITableViewCell {
     
@@ -18,6 +19,9 @@ class yourTimeSlotCell: UITableViewCell {
     var timeSlot: TimeSlot! {
         didSet {
             self.scheduleLabel.text = timeSlot.schedule.owner.username! + "'s " + timeSlot.schedule.type
+            if timeSlot.schedule.owner.username == PFUser.current()!.username {
+                self.scheduleLabel.text = "Your " + timeSlot.schedule.type
+            }
             self.timeStartLabel.text = timeSlot.timeStart.toString(dateFormat: "dd-MM hh:MM a")
             self.timeEndLabel.text = timeSlot.timeEnd.toString(dateFormat: "dd-MM hh:mm a")
             self.typeIcon.image = UIImage(named: timeSlot.schedule.type) ?? UIImage(named: "background")
