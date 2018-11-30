@@ -41,7 +41,7 @@ Date TimeEnd
 
 <img src='https://github.com/insertorgnamehere/accountSharer/blob/master/images/accountSharer.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-## Video Walkthrough
+## Project Progression
 
 Here's a walkthrough of implemented user stories:
 
