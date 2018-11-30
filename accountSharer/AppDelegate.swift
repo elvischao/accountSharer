@@ -13,9 +13,14 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+   
+  
+
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "account-sharer"
@@ -30,6 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let homeTimelineViewController = storyboard.instantiateViewController(withIdentifier: "tabController")
             window?.rootViewController = homeTimelineViewController
         }
+       
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 17), NSAttributedString.Key.foregroundColor : UIColor.white]
+       UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Futura", size: 17)],for: UIControl.State.normal)
+        UITableView.appearance().separatorColor = UIColor.darkGray
+        
+        // set up your background color view
+        let colorView = UIView()
+        colorView.backgroundColor = UIColor.black
+        // use UITableViewCell.appearance() to configure
+        // the default appearance of all UITableViewCells in your app
+        UITableViewCell.appearance().selectedBackgroundView = colorView
+        
+        
+
+       
         
         return true
     }

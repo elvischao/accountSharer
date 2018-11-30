@@ -29,6 +29,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.dataSource = self
     }
     
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         let deleteThisSchedule = schedules[indexPath.row]

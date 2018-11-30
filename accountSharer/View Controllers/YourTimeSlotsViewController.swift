@@ -10,6 +10,12 @@ import UIKit
 import Parse
 
 class YourTimeSlotsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var numDates = 0
+    var diffDates : [String] = []
+    var dict: [String: TimeSlot] = [:]
+   
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     var timeSlots: [TimeSlot] = []
@@ -18,21 +24,31 @@ class YourTimeSlotsViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+       
+      
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.getTimeSlots()
     }
     
+    
+    
+   
+    
     func getTimeSlots() {
         APIManager.getTimeSlots(user: PFUser.current()!) { (result: [PFObject]?, error: Error?) in
             if let result = result {
                 self.timeSlots = result as! [TimeSlot]
                 self.tableView.reloadData()
+        
+                
             }
         }
     }
+  
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         APIManager.delTimeSlot(timeSlot: timeSlots[indexPath.row])  { (success: Bool?, error: Error?) in
@@ -49,9 +65,19 @@ class YourTimeSlotsViewController: UIViewController, UITableViewDelegate, UITabl
         return timeSlots.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "yourTimeSlotCell", for: indexPath) as! yourTimeSlotCell
         cell.timeSlot = timeSlots[indexPath.row]
+
         return cell
+        
     }
+    
+    
+    
+    
+   
+    
+   
 }

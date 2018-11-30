@@ -21,7 +21,10 @@ class MakeTimeSlotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dateStartPicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+        self.dateStartPicker.setValue(UIColor.white, forKeyPath: "textColor")
+
         self.dateEndPicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+        self.dateEndPicker.setValue(UIColor.white, forKeyPath: "textColor")
     }
     
     @IBAction func reservePressed(_ sender: Any) {

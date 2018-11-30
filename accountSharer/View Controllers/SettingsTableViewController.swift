@@ -12,6 +12,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,6 +31,16 @@ class SettingsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
 
         return 1
+    }
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Futura", size: 17)
+        header.backgroundView?.backgroundColor = UIColor(red: 63/255, green: 65/255, blue: 67/255, alpha: 1)
+
+        
+        //header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .left
     }
 
     @IBAction func logoutPressed(_ sender: Any) {

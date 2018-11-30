@@ -49,6 +49,17 @@ class AddScheduleViewController: UITableViewController {
         myIndex = indexPath.row
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont(name: "Futura", size: 17)
+        header.backgroundView?.backgroundColor = UIColor(red: 63/255, green: 65/255, blue: 67/255, alpha: 1)
+
+        
+        //header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .left
+    }
+    
     @objc func save(_ sender: Any) {
         APIManager.makeNewSchedule(type: schedTypes[myIndex], maxReservableHours: maxHoursReservable)
         self.navigationController?.popViewController(animated: true)
