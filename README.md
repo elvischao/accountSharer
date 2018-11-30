@@ -1,8 +1,8 @@
 # Final Project - 
 
-[appName] is an app that helps people share an account through scheduling.
+[appName] is app that helps people schedule their shared-account usage.
 
-Time spent: **X** hours spent in total
+Time spent: **35** hours spent in total
 
 ## User Stories
 
@@ -17,13 +17,9 @@ Time spent: **X** hours spent in total
 
 The following **stretch** features are implemented:
 
-- [ ] make it look nice with animations and transitions and themes
+- [x] make it look nice with animations and transitions and themes
 - [x] prevent users from overlapping their own times/other times
 - [x] delete "expired" timeslots
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Parse Model
 
@@ -53,6 +49,8 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/insertorgnamehere/accountSharer/blob/master/images/gifs/animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='https://github.com/insertorgnamehere/accountSharer/blob/master/images/gifs/advanced.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
@@ -79,7 +77,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright 2018 Will Xu
+    Copyright 2018 Will Xu Kaila P.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
