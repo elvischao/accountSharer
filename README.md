@@ -36,7 +36,10 @@ String type
 Date TimeStart  
 Date TimeEnd  
 \<Schedule object id\> Schedule the TimeSlot is a part of  
+    
+## Release Walkthrough
 
+<img src='https://github.com/insertorgnamehere/accountSharer/blob/master/images/accountSharer.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Video Walkthrough
 
