@@ -1,4 +1,4 @@
-# Final Project - 
+# Final Project
 
 [appName] is app that helps people schedule their shared-account usage.
 
